@@ -3111,24 +3111,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Wellington\\.nuget\\packages\\": {}
+    "C:\\Users\\wellington.silva\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repositorio Local\\class-checkin\\class-checkin.csproj",
+      "projectUniqueName": "C:\\Users\\wellington.silva\\Documents\\GitHub\\classchekin-backend\\class-checkin.csproj",
       "projectName": "class-checkin",
-      "projectPath": "C:\\Repositorio Local\\class-checkin\\class-checkin.csproj",
-      "packagesPath": "C:\\Users\\Wellington\\.nuget\\packages\\",
-      "outputPath": "C:\\Repositorio Local\\class-checkin\\obj\\",
+      "projectPath": "C:\\Users\\wellington.silva\\Documents\\GitHub\\classchekin-backend\\class-checkin.csproj",
+      "packagesPath": "C:\\Users\\wellington.silva\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wellington.silva\\Documents\\GitHub\\classchekin-backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Wellington\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\wellington.silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

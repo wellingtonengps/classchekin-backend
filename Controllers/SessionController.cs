@@ -17,17 +17,24 @@ public class SessionController : ControllerBase
     _httpContext = httpContext;
   }
 
-  [HttpPost]
-  public async Task<IActionResult> createSession([FromBody] CreateSessionDTO dto)
+  [HttpGet]
+  public async Task<IActionResult> GetAllSessions()
   {
-      var session = await _sessionService.createSessionAsync(dto.title, dto.duration);
+    var sessions = await _sessionService.GetAllSessionsAsync();
+    return Ok(sessions);
+  }
+
+  [HttpPost]
+  public async Task<IActionResult> CreateSession([FromBody] CreateSessionDTO dto)
+  {
+      var session = await _sessionService.CreateSessionAsync(dto.title, dto.duration);
   
       return Ok(new
       {
-          session.id,
-          session.title,
-          session.createdAt,
-          session.duration,
+          session.Id,
+          session.Title,
+          session.CreatedAt,
+          session.Duration,
       });
   }
 }
