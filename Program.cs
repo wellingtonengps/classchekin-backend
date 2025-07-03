@@ -8,6 +8,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=frequencia.db"));
 
 builder.Services.AddScoped<SessionService>();
+builder.Services.AddScoped<AttendanceService>();
+
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllers();

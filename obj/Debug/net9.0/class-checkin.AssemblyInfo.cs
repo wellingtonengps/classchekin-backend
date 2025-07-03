@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("class-checkin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6209f5d584b8012c511fa77013cfebba15e5c509")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+faef5abeb5c0afbd0ada9066d49e9480dee01461")]
 [assembly: System.Reflection.AssemblyProductAttribute("class-checkin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("class-checkin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
