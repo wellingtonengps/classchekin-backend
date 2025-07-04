@@ -11,9 +11,15 @@ builder.Services.AddScoped<SessionService>();
 builder.Services.AddScoped<AttendanceService>();
 
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddCors();
 
 builder.Services.AddControllers();
 var app = builder.Build();
 
+app.UseCors(x => x
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
+
 app.MapControllers();
-app.Run();
+app.Run("http://0.0.0.0:5202");

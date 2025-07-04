@@ -26,4 +26,27 @@ public class AttendanceService
 
     return attendance;
   }
+
+  public async Task<List<Attendance>> GetAllAsync()
+  {
+    return await _context.Attendances
+      .AsNoTracking()
+      .ToListAsync();
+  }
+
+  public async Task<List<Attendance>> GetByStudentIdAsync(Guid studentId)
+  {
+    return await _context.Attendances
+      .Where(a => a.studentId == studentId)
+      .AsNoTracking()
+      .ToListAsync();
+  }
+
+  public async Task<List<Attendance>> GetBySessionIdAsync(Guid sessionId)
+  {
+    return await _context.Attendances
+      .Where(a => a.sessionId == sessionId)
+      .AsNoTracking()
+      .ToListAsync();
+  }
 }

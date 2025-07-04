@@ -28,4 +28,31 @@ public class AttendanceController : ControllerBase
       attendance.createdAt
     });
   }
+
+
+  [HttpGet]
+  public async Task<IActionResult> GetAll()
+  {
+    var list = await _attendanceService.GetAllAsync();
+    return Ok(list);
+  }
+
+
+  [HttpGet("student/{studentId}")]
+  public async Task<IActionResult> GetByStudentId(Guid studentId)
+  {
+    var list = await _attendanceService.GetByStudentIdAsync(studentId);
+    if (!list.Any())
+      return NotFound($"Nenhuma presença encontrada para o estudante com ID {studentId}");
+    return Ok(list);
+  }
+
+  [HttpGet("session/{sessionId}")]
+  public async Task<IActionResult> GetBySessionId(Guid sessionId)
+  {
+    var list = await _attendanceService.GetBySessionIdAsync(sessionId);
+    if (!list.Any())
+      return NotFound($"Nenhuma presença encontrada para a sessão com ID {sessionId}");
+    return Ok(list);
+  }
 }
