@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using classcheckin.Data;
 
@@ -10,37 +11,16 @@ using classcheckin.Data;
 namespace class_checkin.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250620131337_AddStudentAndAttendance")]
+    partial class AddStudentAndAttendance
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.6");
 
             modelBuilder.Entity("classcheckin.Models.Attendance", b =>
-<<<<<<< HEAD
-                {
-                    b.Property<Guid>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("createdAt")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("sessionId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("studentId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Attendances");
-                });
-
-            modelBuilder.Entity("classcheckin.Models.Session", b =>
-=======
->>>>>>> 7fc9ae1e09666b9f3d366b43cf6ae54647c038d0
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

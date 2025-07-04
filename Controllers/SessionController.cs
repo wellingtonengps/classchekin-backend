@@ -19,9 +19,10 @@ public class SessionController : ControllerBase
     _httpContext = httpContext;
   }
 
-  [HttpPost]
-  public async Task<IActionResult> createSession([FromBody] CreateSessionDTO dto)
+  [HttpGet]
+  public async Task<IActionResult> GetAllSessions()
   {
+<<<<<<< HEAD
       var session = await _sessionService.createSessionAsync(dto.title, dto.duration);
 
 
@@ -41,6 +42,24 @@ public class SessionController : ControllerBase
       session.createdAt,
       session.duration,
     });
+=======
+    var sessions = await _sessionService.GetAllSessionsAsync();
+    return Ok(sessions);
+  }
+
+  [HttpPost]
+  public async Task<IActionResult> CreateSession([FromBody] CreateSessionDTO dto)
+  {
+      var session = await _sessionService.CreateSessionAsync(dto.title, dto.duration);
+  
+      return Ok(new
+      {
+          session.Id,
+          session.Title,
+          session.CreatedAt,
+          session.Duration,
+      });
+>>>>>>> 7fc9ae1e09666b9f3d366b43cf6ae54647c038d0
   }
 }
 

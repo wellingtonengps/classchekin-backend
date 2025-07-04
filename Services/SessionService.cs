@@ -13,11 +13,17 @@ public class SessionService
     _context = context;
   }
 
-  public async Task<Session> createSessionAsync(string title, TimeSpan duration)
+  public async Task<Session> CreateSessionAsync(string title, TimeSpan duration)
   {
-    var session = new Session { title = title, duration = duration };
+    var session = new Session { Title = title, Duration = duration };
     _context.Sessions.Add(session);
     await _context.SaveChangesAsync();
     return session;
   }
+
+  public async Task<List<Session>> GetAllSessionsAsync()
+  {
+    return await _context.Sessions.ToListAsync();
+  }
 }
+
