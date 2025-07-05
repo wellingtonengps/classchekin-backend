@@ -11,8 +11,8 @@ using classcheckin.Data;
 namespace class_checkin.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250703001149_AttendanceCreate")]
-    partial class AttendanceCreate
+    [Migration("20250705015215_createStudent")]
+    partial class createStudent
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,6 +59,28 @@ namespace class_checkin.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Sessions");
+                });
+
+            modelBuilder.Entity("classcheckin.Models.Student", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("registration")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Students");
                 });
 #pragma warning restore 612, 618
         }

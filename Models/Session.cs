@@ -5,14 +5,14 @@ namespace classcheckin.Models;
 public class Session
 {
   [Key]
-  public Guid Id { get; set; } = Guid.NewGuid();
+  public Guid id { get; set; } = Guid.NewGuid();
 
   [Required]
-  public string Title { get; set; }
+  public string title { get; set; }
 
-  public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+  public DateTime createdAt { get; set; } = DateTime.UtcNow;
 
   [Required]
-  public TimeSpan Duration { get; set; }
+  public TimeSpan duration { get; set; }
 }
 

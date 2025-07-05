@@ -18,7 +18,6 @@ namespace class_checkin.Migrations
             modelBuilder.HasAnnotation("ProductVersion", "9.0.6");
 
             modelBuilder.Entity("classcheckin.Models.Attendance", b =>
-<<<<<<< HEAD
                 {
                     b.Property<Guid>("id")
                         .ValueGeneratedOnAdd()
@@ -39,88 +38,46 @@ namespace class_checkin.Migrations
                 });
 
             modelBuilder.Entity("classcheckin.Models.Session", b =>
-=======
->>>>>>> 7fc9ae1e09666b9f3d366b43cf6ae54647c038d0
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SessionId")
+                    b.Property<DateTime>("createdAt")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("StudentId")
+                    b.Property<TimeSpan>("duration")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Timestamp")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SessionId");
-
-                    b.HasIndex("StudentId");
-
-                    b.ToTable("Attendances");
-                });
-
-            modelBuilder.Entity("classcheckin.Models.Session", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TEXT");
-
-                    b.Property<TimeSpan>("Duration")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Title")
+                    b.Property<string>("title")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.ToTable("Sessions");
                 });
 
             modelBuilder.Entity("classcheckin.Models.Student", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("email")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.Property<int>("registration")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("id");
 
                     b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("classcheckin.Models.Attendance", b =>
-                {
-                    b.HasOne("classcheckin.Models.Session", "Session")
-                        .WithMany()
-                        .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("classcheckin.Models.Student", "Student")
-                        .WithMany()
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Session");
-
-                    b.Navigation("Student");
                 });
 #pragma warning restore 612, 618
         }

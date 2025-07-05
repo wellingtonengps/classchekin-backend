@@ -9,6 +9,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<SessionService>();
 builder.Services.AddScoped<AttendanceService>();
+builder.Services.AddScoped<StudentService>();
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddCors();

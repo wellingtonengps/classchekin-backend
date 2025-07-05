@@ -22,10 +22,7 @@ public class AttendanceController : ControllerBase
 
     return Ok(new
     {
-      attendance.id,
-      attendance.studentId,
-      attendance.sessionId,
-      attendance.createdAt
+      attendance
     });
   }
 
@@ -33,8 +30,8 @@ public class AttendanceController : ControllerBase
   [HttpGet]
   public async Task<IActionResult> GetAll()
   {
-    var list = await _attendanceService.GetAllAsync();
-    return Ok(list);
+    var attendances = await _attendanceService.GetAllAsync();
+    return Ok(attendances);
   }
 
 

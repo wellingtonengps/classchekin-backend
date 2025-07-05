@@ -5,13 +5,16 @@ namespace classcheckin.Models;
 public class Student
 {
   [Key]
-  public Guid Id { get; set; } = Guid.NewGuid();
+  public Guid id { get; set; } = Guid.NewGuid();
 
   [Required]
-  public string Name { get; set; }
+  public string name { get; set; }
+
+  [Required]
+  public int registration { get; set; }
 
   [Required]
   [EmailAddress]
-  public string Email { get; set; }
+  public string email { get; set; }
 }
 

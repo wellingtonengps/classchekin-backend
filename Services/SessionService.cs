@@ -15,7 +15,7 @@ public class SessionService
 
   public async Task<Session> CreateSessionAsync(string title, TimeSpan duration)
   {
-    var session = new Session { Title = title, Duration = duration };
+    var session = new Session { title = title, duration = duration };
     _context.Sessions.Add(session);
     await _context.SaveChangesAsync();
     return session;

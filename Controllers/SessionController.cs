@@ -22,11 +22,16 @@ public class SessionController : ControllerBase
   [HttpGet]
   public async Task<IActionResult> GetAllSessions()
   {
-<<<<<<< HEAD
-      var session = await _sessionService.createSessionAsync(dto.title, dto.duration);
+    var sessions = await _sessionService.GetAllSessionsAsync();
+    return Ok(sessions);
+  }
 
-
-       Console.OutputEncoding = Encoding.UTF8;
+  [HttpPost]
+  public async Task<IActionResult> CreateSession([FromBody] CreateSessionDTO dto)
+  {
+    var session = await _sessionService.CreateSessionAsync(dto.title, dto.duration);
+      
+    Console.OutputEncoding = Encoding.UTF8;
 
     QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
     QRCodeData qRCodeData = qRCodeGenerator.CreateQrCode(session.id.ToString(), QRCodeGenerator.ECCLevel.Q);
@@ -42,24 +47,6 @@ public class SessionController : ControllerBase
       session.createdAt,
       session.duration,
     });
-=======
-    var sessions = await _sessionService.GetAllSessionsAsync();
-    return Ok(sessions);
-  }
-
-  [HttpPost]
-  public async Task<IActionResult> CreateSession([FromBody] CreateSessionDTO dto)
-  {
-      var session = await _sessionService.CreateSessionAsync(dto.title, dto.duration);
-  
-      return Ok(new
-      {
-          session.Id,
-          session.Title,
-          session.CreatedAt,
-          session.Duration,
-      });
->>>>>>> 7fc9ae1e09666b9f3d366b43cf6ae54647c038d0
   }
 }
 
