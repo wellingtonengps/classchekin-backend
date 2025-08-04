@@ -41,11 +41,12 @@ public class SessionController : ControllerBase
     Console.WriteLine(qRCodeAsAscii);
   
       return Ok(new
-    {
-      session.id,
-      session.title,
-      session.createdAt,
-      session.duration,
+      {
+        session.id,
+        session.title,
+        session.createdAt,
+        session.duration,
+        session.Status,
     });
   }
 }

@@ -39,8 +39,6 @@ public class AttendanceController : ControllerBase
   public async Task<IActionResult> GetByStudentId(Guid studentId)
   {
     var list = await _attendanceService.GetByStudentIdAsync(studentId);
-    if (!list.Any())
-      return NotFound($"Nenhuma presença encontrada para o estudante com ID {studentId}");
     return Ok(list);
   }
 
